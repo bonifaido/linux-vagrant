@@ -1,0 +1,6 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+    - name: Install OpenJDK 7
+      apt: name=openjdk-7-jdk update_cache=yes
