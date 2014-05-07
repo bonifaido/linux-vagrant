@@ -1,4 +1,8 @@
 ubuntu-vagrant
 ==============
 
-An Ubuntu x64 instance configured with Vagrant+Ansible
+An starter Ubuntu instance configured with Vagrant+Ansible
+
+## Prerequisites
+- Vagrant
+- Ansible
