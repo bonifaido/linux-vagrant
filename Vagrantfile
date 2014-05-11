@@ -9,12 +9,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise64"
+  config.vm.define "i386" do |i386|
+    i386.vm.box = "precise32"
+    i386.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  end
 
-  # The url from where the 'config.vm.box' box will be fetched if it
-  # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.define "x86_64" do |x86_64|
+    x86_64.vm.box = "precise64"
+    x86_64.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  end
 
   config.vm.provision :ansible, playbook: "playbook.yml"
 
