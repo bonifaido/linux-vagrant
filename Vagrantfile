@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     i386.vm.box_url = "http://files.vagrantup.com/precise32.box"
   end
 
-  config.vm.define "x86_64" do |x86_64|
+  config.vm.define "x86_64", primary: true do |x86_64|
     x86_64.vm.box = "precise64"
     x86_64.vm.box_url = "http://files.vagrantup.com/precise64.box"
   end
