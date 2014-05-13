@@ -9,15 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  config.vm.define "i386" do |i386|
-    i386.vm.box = "precise32"
-    i386.vm.box_url = "http://files.vagrantup.com/precise32.box"
-  end
-
-  config.vm.define "x86_64", primary: true do |x86_64|
-    x86_64.vm.box = "precise64"
-    x86_64.vm.box_url = "http://files.vagrantup.com/precise64.box"
-  end
+  config.vm.box = "ubuntu/trusty64"
 
   config.vm.provision :ansible, playbook: "playbook.yml"
 
